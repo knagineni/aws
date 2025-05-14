@@ -1,0 +1,54 @@
+- You need to deploy multiple EC2 Linux instances that will provide your company with virtual private networks (VPNs) using software called OpenVPN. Which of the following will be the most efficient solutions? 
+
+
+
+- As part of your company's long-term cloud migration strategy, you have a VMware virtual machine in your local infrastructure that you'd like to copy to your AWS account and run as an EC2 instance. Which of the following will be necessary steps? 
+
+
+- Your AWS CLI command to launch an AMI as an EC2 instance has failed, giving you an error message that includes InvalidAMIID.NotFound.
+
+
+- The sensitivity of the data your company works with means that the instances you run must be secured through complete physical isolation. What should you specify as you configure a new instance?
+
+- Normally, two instances running m5.large instance types can handle the traffic accessing your online e-commerce site, but you know that you will face short, unpredictable periods of high demand. Which of the following choices should you implement? (Choose two.)
+
+- Which of the following use cases would be most cost effective if run using spot market instances?
+
+- In the course of a routine infrastructure audit, your organization discovers that some of your running EC2 instances are not configured properly and must be updated. Which of the following configuration details cannot be changed on an existing EC2 instance?
+
+- For an account with multiple resources running as part of multiple projects, which of the following key/value combination examples would make for the most effective identification convention for resource tags?
+
+- Which of the following EBS options will you need to keep your data-hungry application that requires up to 20,000 IOPS happy?
+
+- Your organization needs to introduce Auto Scaling to its infrastructure and needs to generate a “golden image” AMI from an existing EBS volume. This image will need to be shared among multiple AWS accounts belonging to your organization. Which of the following steps will get you there? (Choose three.)
+
+- Which of the following are benefits of instance store volumes? (Choose two.)
+
+- According to default behavior (and AWS recommendations), which of the following IP addresses could be assigned as the private IP for an EC2 instance? (Choose two.)
+
+- You need to restrict access to your EC2 instance-based application to only certain clients and only certain targets. Which three attributes of an incoming data packet are used by a security group to determine whether it should be allowed through? (Choose three.)
+
+- How are IAM roles commonly used to ensure secure resource access in relation to EC2 instances?
+
+- You have an instance running within a private subnet that needs external network access to receive software updates and patches. Which of the following can securely provide that access from a public subnet within the same VPC? (Choose two.)
+
+- What do you have to do to securely authenticate to the GUI console of a Windows EC2 session?
+
+- Your application deployment includes multiple EC2 instances that need low-latency connections to each other. Which of the following AWS tools will allow you to locate EC2 instances closer to each other to reduce network latency?
+
+- To save configuration time and money, you want your application to run only when network events trigger it but shut down immediately after. Which of the following will do that for you?
+
+- Which of the following will allow you to quickly copy a virtual machine image from your local infrastructure to your AWS VPC?
+
+- You've configured an EC2 Auto Scaling group to use a launch configuration to provision and install an application on several instances. You now need to reconfigure Auto Scaling to install an additional application on new instances. Which of the following should you do?
+
+- You create an Auto Scaling group with a minimum group size of 3, a maximum group size of 10, and a desired capacity of 5. You then manually terminate two instances in the group. Which of the following will Auto Scaling do?
+
+- You're running an application that receives a spike in traffic on the first day of every month. You want to configure Auto Scaling to add more instances before the spike begins and then add additional instances in proportion to the CPU utilization of each instance. Which of the following should you implement? (Choose all that apply.)
+
+- As part of your new data backup protocols, you need to manually take EBS snapshots of several hundred volumes. Which type of Systems Manager document enables you to do this?
+
+- You want to launch and manage a complex microservices container workload in AWS but you want to avoid as many configuration headaches as possible, You figure you'll be fine with whatever defaults you're offered. Which of these platforms is your best choice?
+
+
+
