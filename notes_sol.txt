@@ -1,0 +1,74 @@
+- You need to deploy multiple EC2 Linux instances that will provide your company with virtual private networks (VPNs) using software called OpenVPN. Which of the following will be the most efficient solutions? 
+# Many third-party companies maintain official and supported AMIs running their software on the AWS Marketplace. AMIs hosted among the community AMIs are not always official and supported versions. Since your company will need several such instances, you'll be better off automating the process by bootstrapping rather than having to configure the software manually each time. The site-to-site VPN tool doesn't use OpenVPN.
+
+- As part of your company's long-term cloud migration strategy, you have a VMware virtual machine in your local infrastructure that you'd like to copy to your AWS account and run as an EC2 instance. Which of the following will be necessary steps? 
+# The VM Import/Export tool handles the secure and reliable transfer for a virtual machine between your AWS account and local datacenter. A successfully imported VM will appear among the private AMIs in the region you selected. Direct S3 uploads and SSH tunnels are not associated with VM Import/Export.
+
+- Your AWS CLI command to launch an AMI as an EC2 instance has failed, giving you an error message that includes InvalidAMIID.NotFound.
+ AMIs are specific to a single AWS region and cannot be deployed into any other region. If your AWS CLI or its key pair was not configured properly, # your connection would have failed completely. A public AMI being unavailable because it's “updating” is theoretically possible but unlikely.
+
+- The sensitivity of the data your company works with means that the instances you run must be secured through complete physical isolation. What should you specify as you configure a new instance?
+# Only Dedicated Host tenancy offers full isolation. Shared tenancy instances will often share hardware with operations belonging to other organizations. Dedicated instance tenancy instances may be hosted on the same physical server as other instances within your account.
+
+- Normally, two instances running m5.large instance types can handle the traffic accessing your online e-commerce site, but you know that you will face short, unpredictable periods of high demand. Which of the following choices should you implement? (Choose two.)
+# Reserve instances will give you the best price for instances you know will be running 24/7, whereas on-demand makes the most sense for workloads that will run at unpredictable times but can't be shut down until they're no longer needed. Load balancing controls traffic routing and, on its own, has no impact on your ability to meet changing demand. Since the m5.large instance type is all you need to meet normal workloads, you'll be wasting money by running a larger type 24/7.
+
+- Which of the following use cases would be most cost effective if run using spot market instances?
+# Spot market instances can be shut down with only a minimal (two-minute) warning, so they're not recommended for workloads that require reliably predictable service. Even if your AMI can be relaunched, the interrupted workload will still be lost. Static S3 websites don't run on EC2 infrastructure in the first place.
+
+- In the course of a routine infrastructure audit, your organization discovers that some of your running EC2 instances are not configured properly and must be updated. Which of the following configuration details cannot be changed on an existing EC2 instance?
+# You can edit or even add or remove security groups from running instances and the changes will take effect instantly. Similarly, you can associate or release an elastic IP address to/from a running instance. You can change an instance type as long as you shut down the instance first. But the AMI can't be changed; you'll need to create an entirely new instance.
+
+- For an account with multiple resources running as part of multiple projects, which of the following key/value combination examples would make for the most effective identification convention for resource tags?
+# The first of two (and not three) strings in a resource tag is the key—the group to which the specific resource belongs. The second string is the value, which identifies the resource itself. If the key looks too much like the value, it can cause confusion.
+
+- Which of the following EBS options will you need to keep your data-hungry application that requires up to 20,000 IOPS happy?
+# Provisioned-IOPS SSD volumes are currently the only type that comes close to 20,000 IOPS. In fact, under the right circumstances, they can deliver up to 256,000 IOPS.
+
+- Your organization needs to introduce Auto Scaling to its infrastructure and needs to generate a “golden image” AMI from an existing EBS volume. This image will need to be shared among multiple AWS accounts belonging to your organization. Which of the following steps will get you there?
+# When an image is created, a snapshot is automatically created from which an AMI is built. You do not, however, create a snapshot from an image. The AWS Marketplace contains only public images; hopefully, no one will have uploaded your organization's private image there!
+
+- Which of the following are benefits of instance store volumes?
+# The fact that instance volumes are physically attached to the host server and add nothing to an instance cost is a benefit. The data on instance volumes is ephemeral and will be lost as soon as the instance is shut down. There is no way to set termination protection for instance volumes because they're dependent on the life cycle of their host instances.
+
+- According to default behavior (and AWS recommendations), which of the following IP addresses could be assigned as the private IP for an EC2 instance?
+#  By default, EC2 uses the standard address blocks for private subnets, so all private addresses will fall within these ranges: 10.0.0.0 to 10.255.255.255, 172.16.0.0 to 172.31.255.255, and 192.168.0.0 to 192.168.255.255.
+
+- You need to restrict access to your EC2 instance-based application to only certain clients and only certain targets. Which three attributes of an incoming data packet are used by a security group to determine whether it should be allowed through?
+# Ports and source and destinations addresses are considered by security group rules. Security group rules do not take packet size into consideration. Since a security group is directly associated with specific objects, there's no need to reference the target address.
+
+- How are IAM roles commonly used to ensure secure resource access in relation to EC2 instances?
+# IAM roles define how resources access other resources. Users cannot authenticate as an instance role, nor can a role be associated with an instance's internal system process.
+
+- You have an instance running within a private subnet that needs external network access to receive software updates and patches. Which of the following can securely provide that access from a public subnet within the same VPC?
+# NAT instances and NAT gateways are AWS tools for safely routing traffic between private and public subnets and from there, out to the Internet. An Internet gateway connects a VPC with the Internet, and a virtual private gateway connects a VPC with a remote site over a secure VPN. A stand-alone VPN wouldn't normally be helpful for this purpose.
+
+- What do you have to do to securely authenticate to the GUI console of a Windows EC2 session?
+# The client computer in an encrypted operation must always use the private key to authenticate. For EC2 instances running Windows, you retrieve the password you'll use for the GUI login using your private key.
+
+- Your application deployment includes multiple EC2 instances that need low-latency connections to each other. Which of the following AWS tools will allow you to locate EC2 instances closer to each other to reduce network latency?
+# Placement groups allow you to specify where your EC2 instances will live. Load balancing directs external user requests between multiple EC2 instances, Systems Manager provides tools for monitoring and managing your resources, and Fargate is an interface for administering Docker containers on Amazon ECS.
+
+- To save configuration time and money, you want your application to run only when network events trigger it but shut down immediately after. Which of the following will do that for you?
+# Lambda can be used as such a trigger. Beanstalk launches and manages infrastructure for your application that will remain running until you manually stop it, ECS manages Docker containers but doesn't necessarily stop them when a task is done, and Auto Scaling can add instances to an already running deployment to meet demand.
+
+- Which of the following will allow you to quickly copy a virtual machine image from your local infrastructure to your AWS VPC?
+# VM Import/Export will do this. S3 buckets are used to store an image, but they're not directly involved in the import operation. Snowball is a physical high-capacity storage device that Amazon ships to your office for you to load data and ship back. Direct Connect uses Amazon partner providers to build a high-speed connection between your servers and your AWS VPC.
+
+- You've configured an EC2 Auto Scaling group to use a launch configuration to provision and install an application on several instances. You now need to reconfigure Auto Scaling to install an additional application on new instances. Which of the following should you do?
+# You can modify a launch template by creating a new version of it; however, the question indicates that the Auto Scaling group was created using a launch configuration. You can't modify a launch configuration. Auto Scaling doesn't use CloudFormation templates.
+
+- You create an Auto Scaling group with a minimum group size of 3, a maximum group size of 10, and a desired capacity of 5. You then manually terminate two instances in the group. Which of the following will Auto Scaling do?
+# Auto Scaling strives to maintain the number of instances specified in the desired capacity setting. If the desired capacity setting isn't set, Auto Scaling will attempt to maintain the number of instances specified by the minimum group size. Given a desired capacity value of 5, there should be five healthy instances. If you manually terminate two of them, Auto Scaling will create two new ones to replace them. Auto Scaling will not adjust the desired capacity or minimum group size.
+
+- You're running an application that receives a spike in traffic on the first day of every month. You want to configure Auto Scaling to add more instances before the spike begins and then add additional instances in proportion to the CPU utilization of each instance. Which of the following should you implement?
+# Scheduled actions can adjust the minimum and maximum group sizes and the desired capacity on a schedule, which is useful when your application has a predictable load pattern. To add more instances in proportion to the aggregate CPU utilization of the group, implement step scaling policies. Target tracking policies adjust the desired capacity of a group to keep the threshold of a given metric near a predefined value. Simple scaling policies simply add more instances when a defined CloudWatch alarm triggers, but the number of instances added is not proportional to the value of the metric.
+
+- As part of your new data backup protocols, you need to manually take EBS snapshots of several hundred volumes. Which type of Systems Manager document enables you to do this?
+# Automation documents let you perform actions against your AWS resources, including taking EBS snapshots. Although called automation documents, you can still manually execute them. A command document performs actions within a Linux or a Windows instance. A policy document works only with State Manager and can't take an EBS snapshot. There's no manual document type.
+
+- You want to launch and manage a complex microservices container workload in AWS but you want to avoid as many configuration headaches as possible, You figure you'll be fine with whatever defaults you're offered. Which of these platforms is your best choice?
+# Fargate is a service that uses either ECS or EKS infrastructure under the hood, but actually abstracts away most of the configuration details. Therefore, Fargate is your best bet. EKS and ECS give you far greater control over your configuration but, as a result, are more complex. EKS Distro is a way of running K8s containers in your own infrastructure and, if anything, is the most complex option of all.
+
+
+
