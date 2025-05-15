@@ -1,0 +1,128 @@
+- Your organization runs Linux-based EC2 instances that all require low-latency read/write access to a single set of files. Which of the following AWS services are your best choices? (Choose two.)
+AWS Storage Gateway
+AWS S3
+Amazon Elastic File System
+AWS Elastic Block Store
+
+- Your organization expects to be storing and processing large volumes of data in many small increments. When considering S3 usability, you'll need to know whether you'll face any practical limitations in the use of AWS account resources. Which of the following will normally be available only in limited amounts?
+PUT requests/month against an S3 bucket
+The volume of data space available per S3 bucket
+Account-wide S3 storage space
+The number of S3 buckets within a single account
+
+- You have a publicly available file called filename stored in an S3 bucket named bucketname. Which of the following addresses will successfully retrieve the file using a web browser?
+s3.amazonaws.com/bucketname/filename
+filename/bucketname.s3.amazonaws.com
+s3://bucketname/filename
+s3://filename/bucketname
+
+- If you want the files stored in an S3 bucket to be accessible using a familiar directory hierarchy system, you'll need to specify prefixes and delimiters. What are prefixes and delimiters?
+A prefix is the name common to the objects you want to group, and a delimiter is the bar character (|).
+A prefix is the DNS name that precedes the amazonaws.com domain, and a delimiter is the name you want to give your file directory.
+A prefix is the name common to the objects you want to group, and a delimiter is a forward slash character (/).
+A prefix is the name common to the file type you want to identify, and a delimiter is a forward slash character (/).
+
+- Your web application relies on data objects stored in AWS S3 buckets. Compliance with industry regulations requires that those objects be encrypted and that related events be closely tracked. Which combination of tools should you use? (Choose two.)
+Server-side encryption
+Amazon S3-Managed Keys
+AWS KMS-Managed Keys
+Client-side encryption
+AWS End-to-End managed keys
+
+- You are engaged in a deep audit of the use of your AWS resources and you need to better understand the structure and content of your S3 server access logs. Which of the following operational details are likely to be included in S3 server access logs? (Choose three.)
+Source bucket name
+Action requested
+Current bucket size
+API bucket creation calls
+Response status
+
+- You're assessing the level of durability you'll need to sufficiently ensure the long-term viability of a new web application you're planning. Which of the following risks are covered by S3's data durability guarantees? (Choose two.)
+User misconfiguration
+Account security breach
+Infrastructure failure
+Temporary service outages
+Datacenter security breach
+
+- Which of the following explains the difference in durability between S3'sStandard-IA and S3 Intelligent-Tiering classes?
+Standard-IA data has only 99.9% availability, whereas Intelligent-Tiering's availability depends on the data's current state.
+Standard-IA data is heavily replicated but only within a single availability zone, whereas Intelligent-Tiering data is only lightly replicated.
+Standard-IA data is replicated across AWS regions, whereas Intelligent-Tiering data is restricted to a single region.
+Standard-IA data is automatically backed up to Amazon Glacier, whereas Intelligent-Tiering data remains within S3.
+
+- Which of the following is the 12-month availability guarantee for the S3 Standard-IA class?
+99.99 percent
+99.9 percent
+99.999999999 percent
+99.5 percent
+
+- Your application regularly writes data to an S3 bucket, but you're worried about the potential for data corruption as a result of conflicting concurrent operations. Which of the following data operations would not be subject to concerns about eventual consistency?
+Operations immediately preceding the deletion of an existing object
+Operations subsequent to the updating of an existing object
+Operations subsequent to the deletion of an existing object
+Operations subsequent to the creation of a new object
+
+- You're worried that updates to the important data you store in S3 might incorrectly overwrite existing files. What must you do to protect objects in S3 buckets from being accidentally lost?
+Nothing. S3 protects existing files by default.
+Nothing. S3 saves older versions of your files by default.
+Enable versioning.
+Enable file overwrite protection.
+
+- Your S3 buckets contain many thousands of objects. Some of them could be moved to less expensive storage classes and others still require instant availability. How can you apply transitions between storage classes for only certain objects within an S3 bucket?
+By specifying particular prefixes when you define your life cycle rules.
+This isn't possible. Life cycle rules must apply to all the objects in a bucket.
+By specifying particular prefixes when you create the bucket.
+By importing a predefined life cycle rule template.
+
+- Which of the following classes will usually make the most sense for long-term storage when included within a sequence of life cycle rules?
+S3 Glacier Flexible Retrieval
+Reduced Redundancy
+S3 One Zone-IA
+S3 Standard-IA
+
+- Which of the following are the recommended methods for providing secure and controlled access to your buckets? (Choose two.)
+S3 access control lists (ACLs)
+S3 bucket policies
+IAM policies
+Security groups
+AWS Key Management Service
+
+- In the context of an S3 bucket policy, which of the following statements describes a principal?
+The AWS service being defined (S3 in this case)
+An origin resource that's given permission to alter an S3 bucket
+The resource whose access is being defined
+The user or entity to which access is assigned
+
+- You don't want to open up the contents of an S3 bucket to anyone on the Internet, but you need to share the data with specific clients. Generating and then sending them a presigned URL is a perfect solution. Assuming you didn't explicitly set a value, how long will the presigned URL remain valid?
+24 hours
+3,600 seconds
+5 minutes
+360 seconds
+
+- Which non-S3 AWS resources can improve the security and user experience of your S3-hosted static website? (Choose two.)
+AWS Certificate Manager
+Elastic Compute Cloud (EC2)
+Relational Database Service (RDS)
+Route 53
+AWS Key Management Service
+
+- How long will it take to retrieve an archive from Amazon Glacier Deep Archive ?
+5 hours
+12 hours
+2 days
+1 week
+
+- You need a quick way to transfer very large (peta-scale) data archives to the cloud. Assuming your Internet connection isn't up to the task, which of the following will be both (relatively) fast and cost-effective?
+Direct Connect
+Server Migration Service
+Snowball
+Storage Gateway
+
+- Your organization runs Windows-based EC2 instances that all require low-latency read/write access to a single set of files. Which of the following AWS services is your best choice?
+Amazon FSx for Windows File Server
+Amazon FSx for Lustre
+Amazon Elastic File System
+Amazon Elastic Block Store
+
+
+
+
